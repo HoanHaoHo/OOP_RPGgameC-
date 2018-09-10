@@ -10,6 +10,7 @@ namespace OOP_RPG
         public Game game { get; set; }
         public Hero hero { get; set; }
         
+
         public Fight(Hero hero, Game game) {
             this.Monsters = new List<Monster>();
             this.hero = hero;
@@ -21,12 +22,14 @@ namespace OOP_RPG
         }
         
         public void AddMonster(string name, int strength, int defense, int hp) {
-            var monster = new Monster();
-            monster.Name = name;
-            monster.Strength = strength;
-            monster.Defense = defense;
-            monster.OriginalHP = hp;
-            monster.CurrentHP = hp;
+            //var monster = new Monster();
+            //monster.Name = name;
+            //monster.Strength = strength;
+            //monster.Defense = defense;
+            //monster.OriginalHP = hp;
+            //monster.CurrentHP = hp;
+            //this.Monsters.Add(monster);
+            var monster = new Monster(name, strength, defense, hp, hp);
             this.Monsters.Add(monster);
         }
         
