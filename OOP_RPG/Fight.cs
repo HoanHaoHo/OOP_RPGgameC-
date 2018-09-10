@@ -20,14 +20,14 @@ namespace OOP_RPG
             this.AddMonster("Lizzard", 7, 10, 15);
             this.AddMonster("AcientTurtle", 10, 9, 19);
             this.AddMonster("Dragon", 12, 10, 25);
-            //this.monster = Monsters.Where(x => x.Strength >= 11).FirstOrDefault();  // Monsters with a strength at least 11
+            // this.monster = Monsters.Where(x => x.Strength >= 11).FirstOrDefault();  // Monsters with a strength at least 11
             // this.monster = this.Monsters[0]; // first monster
             // this.monster = this.Monsters[1]; // second monster
-            // this.monster = Monsters[Monsters.Count-1] // last monster;
+            // this.monster = Monsters[Monsters.Count - 1]; // last monster;
             // this.monster = Monsters.Where(x=> x.CurrentHP <20).FirstOrDefault(); //Monsters with less than 20hp
 
-            this.monster = this.Monsters[new Random().Next(this.Monsters.Count-1)]; // Choose random monster
-            this.monster = monster;
+             this.monster = this.Monsters[new Random().Next(this.Monsters.Count-1)]; // Choose random monster
+           
         }
 
         public void AddMonster(string name, int strength, int defense, int hp) {
@@ -43,6 +43,7 @@ namespace OOP_RPG
         }
         
         public void Start() {
+
 
             
             Console.WriteLine("You've encountered a " + monster.Name + "! " + monster.Strength + " Strength/" + monster.Defense + " Defense/" + 
