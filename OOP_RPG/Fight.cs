@@ -16,10 +16,10 @@ namespace OOP_RPG
             this.hero = hero;
             this.game = game;
            
-            this.AddMonster("Squid", 9, 8, 20);
-            this.AddMonster("Lizzard", 7, 10, 15);
-            this.AddMonster("AcientTurtle", 10, 9, 19);
-            this.AddMonster("Dragon", 12, 10, 25);
+            this.AddMonster("Squid", 9, 8, 20,5);
+            this.AddMonster("Lizzard", 7, 10, 15,5);
+            this.AddMonster("AcientTurtle", 10, 9, 19,10);
+            this.AddMonster("Dragon", 12, 10, 25,15);
             // this.monster = Monsters.Where(x => x.Strength >= 11).FirstOrDefault();  // Monsters with a strength at least 11
             // this.monster = this.Monsters[0]; // first monster
             // this.monster = this.Monsters[1]; // second monster
@@ -30,15 +30,16 @@ namespace OOP_RPG
            
         }
 
-        public void AddMonster(string name, int strength, int defense, int hp) {
+        public void AddMonster(string name, int strength, int defense, int hp, int gold) {
             //var monster = new Monster();
             //monster.Name = name;
             //monster.Strength = strength;
             //monster.Defense = defense;
             //monster.OriginalHP = hp;
             //monster.CurrentHP = hp;
+            //monster.Gold = gold
             //this.Monsters.Add(monster);
-            var monster = new Monster(name, strength, defense, hp);
+            var monster = new Monster(name, strength, defense, hp, gold);
             this.Monsters.Add(monster);
         }
         
@@ -47,7 +48,7 @@ namespace OOP_RPG
 
             
             Console.WriteLine("You've encountered a " + monster.Name + "! " + monster.Strength + " Strength/" + monster.Defense + " Defense/" + 
-            monster.CurrentHP + " HP. What will you do?");
+            monster.CurrentHP + " HP/" + monster.Gold + "Gold . What will you do?");
             Console.WriteLine("1. Fight");
             var input = Console.ReadLine();
             if (input == "1") {
@@ -107,8 +108,11 @@ namespace OOP_RPG
         
         public void Win() {
             //var enemy = monster;
-            Console.WriteLine(monster.Name + " has been defeated! You win the battle!");
+            Console.WriteLine(monster.Name + " has been defeated! You win the battle! You got: " + monster.Gold +"Gold . Check it in your inventory");
+            hero.Gold += monster.Gold;
+           
             game.Main();
+            
         }
         
         public void Lose() {

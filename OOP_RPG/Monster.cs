@@ -8,13 +8,14 @@ namespace OOP_RPG
         
        
 
-        public Monster(string name, int strength, int defense, int hp)
+        public Monster(string name, int strength, int defense, int hp, int gold)
         {
             Name = name;
             Strength = strength;
             Defense = defense;
             OriginalHP = hp;
             CurrentHP = hp;
+            Gold = gold;
         }
 
         
@@ -24,5 +25,6 @@ namespace OOP_RPG
         public int Defense { get; set; }
         public int OriginalHP { get; set; }
         public int CurrentHP { get; set; }
+        public int Gold { get; set; }
     }
 }
