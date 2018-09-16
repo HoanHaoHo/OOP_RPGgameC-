@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 namespace OOP_RPG
 {
     public class Armor : IItem
@@ -13,7 +15,10 @@ namespace OOP_RPG
             this.OriginalValue = originalValue;
             this.ResellValue = resellValue;
         }
-        
-       
+
+        internal static IEnumerable<object> OrderBy(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
