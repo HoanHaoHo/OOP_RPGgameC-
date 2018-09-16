@@ -19,7 +19,7 @@ namespace OOP_RPG
             this.AddMonster("Squid", 9, 8, 20,15,15);
             this.AddMonster("Lizzard", 7, 10, 15,20,13);
             this.AddMonster("AcientTurtle", 10, 9, 19,25,8);
-            this.AddMonster("Dragon", 12, 10, 25,30,11);
+            this.AddMonster("Dragon", 12, 10, 25,30,13);
             // this.monster = Monsters.Where(x => x.Strength >= 11).FirstOrDefault();  // Monsters with a strength at least 11
             // this.monster = this.Monsters[0]; // first monster
             // this.monster = this.Monsters[1]; // second monster

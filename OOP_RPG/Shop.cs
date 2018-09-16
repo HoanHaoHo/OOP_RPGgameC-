@@ -218,7 +218,9 @@ namespace OOP_RPG
                     Hero.Gold += armor.ResellValue;
                     Hero.ArmorsBag.Remove(armor);
                     this.Armors.Add(armor);
+                    Console.WriteLine("");
                     Console.WriteLine($"You get {armor.ResellValue} gold from {armor.Name}");
+                    Hero.ShowInventory();
                     Menu();
                 }
                 else if (input.Substring(0, 1) == "W")
@@ -228,7 +230,9 @@ namespace OOP_RPG
                     Hero.Gold += weapon.ResellValue;
                     Hero.WeaponsBag.Remove(weapon);
                     this.Weapons.Add(weapon);
+                    Console.WriteLine("");
                     Console.WriteLine($"You get {weapon.ResellValue} gold from {weapon.Name}");
+                    Hero.ShowInventory();
                     Menu();
                 }
                 else if (input.Substring(0, 1) == "P")
@@ -238,7 +242,9 @@ namespace OOP_RPG
                     Hero.Gold += potion.ResellValue;
                     Hero.PotionsBag.Remove(potion);
                     this.Potions.Add(potion);
+                    Console.WriteLine("");
                     Console.WriteLine($"You get {potion.ResellValue} gold from {potion.Name}");
+                    Hero.ShowInventory();
                     Menu();
                 }
             }
